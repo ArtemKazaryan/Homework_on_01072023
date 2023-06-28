@@ -122,12 +122,12 @@ WHERE sg.ID = cg.ID
       AND sg.Goods LIKE 'масло%'
 
 24. Со сколькими посредниками сотрудничает фирма. 9
-SELECT COUNT(s.Status) +
-    (SELECT COUNT(c.Status)
-    FROM Client c
-    WHERE c.Status = 'посредник') VSEGO_POSREDNIKOV
-FROM Seller s 
-WHERE s.Status = 'посредник'
+SELECT COUNT(Status) +
+    (SELECT COUNT(Status)
+    FROM Client
+    WHERE Status = 'посредник') VSEGO_POSREDNIKOV
+FROM Seller
+WHERE Status = 'посредник'
 
 
 
